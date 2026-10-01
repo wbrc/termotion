@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>termotion web renderer</title>
+		<!--
+			The web renderer does not serve its own assets. This app serves the
+			repository's web/ directory, so termotion.css and termotion.js are
+			loaded from paths this app controls, not from the renderer.
+		-->
+		<link rel="stylesheet" href="/termotion/termotion.css" />
+		<style>
+			body {
+				margin: 0;
+				padding: 2rem;
+				background: #1e1e1e;
+				color: #d4d4d4;
+				font-family: ui-sans-serif, system-ui, sans-serif;
+			}
+			h1 {
+				font-size: 1.1rem;
+				font-weight: 600;
+			}
+			.card {
+				background: #252526;
+				border: 1px solid #333;
+				border-radius: 6px;
+				padding: 1rem 1.25rem;
+				max-width: 900px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>termotion web renderer</h1>
+		<p>Open this page in multiple tabs — each connects and immediately gets the current state.</p>
+		<div class="card">
+			<!-- Auto-activated: the class + data attribute are all that's needed. -->
+			<div class="termotion" data-termotion-url="/termotion/ws"></div>
+		</div>
+		<script type="module" src="/termotion/termotion.js"></script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+/* termotion.css — default styling for the web progress renderer.
+ * Every rule is scoped under .termotion so it will not leak into the host page.
+ * Colors mirror the Bubble Tea renderer defaults. */
+
+.termotion {
+	--tm-running: #3f949e;
+	--tm-done: #55b655;
+	--tm-error: #b62d2d;
+	--tm-canceled: #b96f3b;
+	--tm-progress: #2f70a5;
+	--tm-faint: #808080;
+
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+		"Liberation Mono", monospace;
+	font-size: 13px;
+	line-height: 1.5;
+	white-space: pre;
+	tab-size: 4;
+}
+
+.termotion .tm-row {
+	white-space: pre;
+}
+
+.termotion .tm-title {
+	font-weight: 700;
+}
+
+.termotion .tm-tree {
+	color: var(--tm-faint);
+	opacity: 0.7;
+}
+
+.termotion .tm-time {
+	color: var(--tm-faint);
+	opacity: 0.7;
+}
+
+.termotion .tm-rate {
+	color: var(--tm-faint);
+	opacity: 0.7;
+}
+
+.termotion .tm-msg {
+	color: var(--tm-faint);
+	opacity: 0.7;
+}
+
+.termotion .tm-name {
+	font-weight: 700;
+}
+
+.termotion .tm-status.tm-running,
+.termotion .tm-running {
+	color: var(--tm-running);
+}
+
+.termotion .tm-status.tm-done,
+.termotion .tm-done {
+	color: var(--tm-done);
+	font-weight: 700;
+}
+
+.termotion .tm-status.tm-error,
+.termotion .tm-error {
+	color: var(--tm-error);
+	font-weight: 700;
+}
+
+.termotion .tm-status.tm-canceled,
+.termotion .tm-canceled {
+	color: var(--tm-canceled);
+	font-weight: 700;
+}
+
+.termotion .tm-bar {
+	display: inline-block;
+	width: 20ch;
+	height: 0.7em;
+	vertical-align: middle;
+	background: rgba(128, 128, 128, 0.25);
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.termotion .tm-bar-fill {
+	display: block;
+	height: 100%;
+	background: var(--tm-progress);
+	transition: width 0.1s linear;
+}
